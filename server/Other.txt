@@ -1,0 +1,2 @@
+https://store.steampowered.com/api/appdetails?appids=730
+根据appid获取应用信息

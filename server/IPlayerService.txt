@@ -1,0 +1,83 @@
+IPlayerService 接口
+Steamworks 文献库 > Steamworks Web API 索引 > IPlayerService 接口
+提供与 Steam 用户交互的其他方法。
+
+参见 ISteamUser，了解主接口。
+
+注意： 这是服务接口，此接口中的方法应使用 input_json 参数调用。
+
+请参见 Web API 概览，进一步了解 Steamworks Web API。
+GetRecentlyPlayedGames
+GET https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1/
+名称	类型	是否必需	描述
+key	string	✔	Steamworks Web API 用户验证密钥。
+steamid	uint64	✔	要查询的玩家。
+count	uint32	✔	要返回的游戏数量（0/未设置：全部）。
+
+获取玩家最近运行的游戏的信息。
+GetSingleGamePlaytime
+GET https://api.steampowered.com/IPlayerService/GetSingleGamePlaytime/v1/
+名称	类型	是否必需	描述
+key	string	✔	Steamworks Web API 用户验证密钥。
+steamid	uint64	✔	要查询的玩家。
+appid	uint32	✔	要获取其游戏时间的 AppID。
+
+获取某个玩家在单个 appID 上的游戏时间信息。 WebAPI 密钥必须与此 appID 关联才能获取结果。
+GetOwnedGames
+GET https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/
+名称	类型	是否必需	描述
+key	string	✔	Steamworks Web API 用户验证密钥。
+steamid	uint64	✔	要查询的玩家。
+include_appinfo	bool	✔	如果我们需要各游戏的更多信息（如名称、图标等），为 true。
+include_played_free_games	bool	✔	默认不包含免费游戏。 若设置，将返回用户玩过的免费游戏。
+appids_filter	uint32	✔	若设置，将结果集限制在传入的应用。
+
+如果您能看到玩家拥有游戏的详情，则返回该玩家所拥有游戏的列表。
+GetSteamLevel
+GET https://api.steampowered.com/IPlayerService/GetSteamLevel/v1/
+名称	类型	是否必需	描述
+key	string	✔	Steamworks Web API 用户验证密钥。
+steamid	uint64	✔	要查询的玩家。
+
+返回用户的 Steam 等级。
+GetBadges
+GET https://api.steampowered.com/IPlayerService/GetBadges/v1/
+名称	类型	是否必需	描述
+key	string	✔	Steamworks Web API 用户验证密钥。
+steamid	uint64	✔	要查询的玩家的 Steam id。
+
+获得指定用户所拥有的徽章。
+GetCommunityBadgeProgress
+GET https://api.steampowered.com/IPlayerService/GetCommunityBadgeProgress/v1/
+名称	类型	是否必需	描述
+key	string	✔	Steamworks Web API 用户验证密钥。
+steamid	uint64	✔	要查询的玩家。
+badgeid	int32	✔	要查询的徽章。
+
+获取要获得指定徽章所需的全部任务，以及已完成的任务。
+
+
+获取指定用户的 Steam 动态背景。
+GetProfileBackground
+Gets which profile background is active for a specific user
+https://api.steampowered.com/IPlayerService/GetProfileBackground/v1/?access_token=eyAidHlwIjogIkpXVCIsICJhbGciOiAiRWREU0EiIH0.eyAiaXNzIjogInI6MDAxNl8yODNGQzFBOF8zRjk2MyIsICJzdWIiOiAiNzY1NjExOTkxOTgyODA4MDEiLCAiYXVkIjogWyAid2ViOmNvbW11bml0eSIgXSwgImV4cCI6IDE3ODA0ODcwNjEsICJuYmYiOiAxNzcxNzYwMzE4LCAiaWF0IjogMTc4MDQwMDMxOCwgImp0aSI6ICIwMDE4XzI4M0ZDMUE5XzQzQ0Q0IiwgIm9hdCI6IDE3ODA0MDAzMTgsICJydF9leHAiOiAxNzk4NjEzNzY4LCAicGVyIjogMCwgImlwX3N1YmplY3QiOiAiMTEyLjIxLjIxLjEzMSIsICJpcF9jb25maXJtZXIiOiAiMTEyLjIxLjIxLjEzMSIgfQ.J67yWs6xKrrHKH7cuo1CoVvDsn_yKD7imofsBzDXqNYC4DlFiLbjkQ0X_vrk3Tdk1gK5e-1wPI2cJ4gBtwUmDg&steamid=76561199198280801
+Name	Value	Type	Required	Description
+key	
+click to change
+	string 	Yes 	Access key
+steamid		fixed64 	No	The player we're asking about
+language		string 	No
+
+获取指定用户的头像框
+Gets which avatar frame is active for a specific user
+https://api.steampowered.com/IPlayerService/GetAvatarFrame/v1/?access_token=eyAidHlwIjogIkpXVCIsICJhbGciOiAiRWREU0EiIH0.eyAiaXNzIjogInI6MDAxNl8yODNGQzFBOF8zRjk2MyIsICJzdWIiOiAiNzY1NjExOTkxOTgyODA4MDEiLCAiYXVkIjogWyAid2ViOmNvbW11bml0eSIgXSwgImV4cCI6IDE3ODA0ODcwNjEsICJuYmYiOiAxNzcxNzYwMzE4LCAiaWF0IjogMTc4MDQwMDMxOCwgImp0aSI6ICIwMDE4XzI4M0ZDMUE5XzQzQ0Q0IiwgIm9hdCI6IDE3ODA0MDAzMTgsICJydF9leHAiOiAxNzk4NjEzNzY4LCAicGVyIjogMCwgImlwX3N1YmplY3QiOiAiMTEyLjIxLjIxLjEzMSIsICJpcF9jb25maXJtZXIiOiAiMTEyLjIxLjIxLjEzMSIgfQ.J67yWs6xKrrHKH7cuo1CoVvDsn_yKD7imofsBzDXqNYC4DlFiLbjkQ0X_vrk3Tdk1gK5e-1wPI2cJ4gBtwUmDg&steamid=76561199198280801
+Name	Value	Type	Required	Description
+key	
+click to change
+	string 	Yes 	Access key
+steamid		fixed64 	No	The player we're asking about
+language		string 	No
+
+获取所有游玩过游戏游戏时长
+Gets the last-played times for the account
+https://api.steampowered.com/IPlayerService/ClientGetLastPlayedTimes/v1/?access_token=eyAidHlwIjogIkpXVCIsICJhbGciOiAiRWREU0EiIH0.eyAiaXNzIjogInI6MDAxNl8yODNGQzFBOF8zRjk2MyIsICJzdWIiOiAiNzY1NjExOTkxOTgyODA4MDEiLCAiYXVkIjogWyAid2ViOmNvbW11bml0eSIgXSwgImV4cCI6IDE3ODA0ODcwNjEsICJuYmYiOiAxNzcxNzYwMzE4LCAiaWF0IjogMTc4MDQwMDMxOCwgImp0aSI6ICIwMDE4XzI4M0ZDMUE5XzQzQ0Q0IiwgIm9hdCI6IDE3ODA0MDAzMTgsICJydF9leHAiOiAxNzk4NjEzNzY4LCAicGVyIjogMCwgImlwX3N1YmplY3QiOiAiMTEyLjIxLjIxLjEzMSIsICJpcF9jb25maXJtZXIiOiAiMTEyLjIxLjIxLjEzMSIgfQ.J67yWs6xKrrHKH7cuo1CoVvDsn_yKD7imofsBzDXqNYC4DlFiLbjkQ0X_vrk3Tdk1gK5e-1wPI2cJ4gBtwUmDg

@@ -1,0 +1,49 @@
+ISteamUser 接口
+Steamworks 文献库 > Steamworks Web API 索引 > ISteamUser 接口
+用于访问信息并与用户交互。
+
+参见 IPlayerService，了解其他方法。
+
+请参见 Web API 概览，了解更多有关使用 Steamworks Web API 的信息。
+GetPlayerSummaries
+GET https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/
+名称	类型	是否必需	描述
+key	string	✔	Steamworks Web API 用户验证密钥。
+steamids	string	✔	逗号分隔的 SteamID 列表（最多 100 个）。
+
+注意： 仅当您的网站需要显示有关用户的信息时，才应使用此调用。 如果您的游戏客户端需要此类信息，请改用客户端 API。
+
+此方法有官方不再支持的旧版。 旧版可以继续使用，但我们强烈建议您使用最新版本。
+变更历史：
+
+    第 2 版 - 从数组中移除元素名称。
+
+
+以下为调用的响应示例：
+
+"response":{ 
+  "players":[ 
+     { 
+        "steamid":"77561198355051011",
+        "communityvisibilitystate":1,
+        "profilestate":1,
+        "personaname":"Mister Manager",
+        "lastlogoff":1556305001,
+        "profileurl":"https://steamcommunity.com/profiles/77561198355051011/",
+        "avatar":"https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/32/32f70a383a437d03af91d2f01a0776adf75201b5.jpg",
+        "avatarmedium":"https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/32/32f70a383a437d03af91d2f01a0776adf75201b5_medium.jpg",
+        "avatarfull":"https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/32/32f70a383a437d03af91d2f01a0776adf75201b5_full.jpg",
+     },
+     { 
+        "steamid":"77561197978236369",
+        "communityvisibilitystate":3,
+        "profilestate":1,
+        "personaname":"Olive The Dog",
+        "lastlogoff":1556239336,
+        "profileurl":"https://steamcommunity.com/id/olive_the_dog/",
+        "avatar":"https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/41/555d2fbb879593c0565ce0489428a09c019feffa.jpg",
+        "avatarmedium":"https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/41/555d2fbb879593c0565ce0489428a09c019feffa_medium.jpg",
+        "avatarfull":"https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/41/555d2fbb879593c0565ce0489428a09c019feffa_full.jpg",
+     }
+  ]
+}

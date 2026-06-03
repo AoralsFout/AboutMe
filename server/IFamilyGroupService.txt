@@ -1,0 +1,12 @@
+Return a list of apps available from other members
+https://api.steampowered.com/IFamilyGroupsService/GetSharedLibraryApps/v1/?access_token=eyAidHlwIjogIkpXVCIsICJhbGciOiAiRWREU0EiIH0.eyAiaXNzIjogInI6MDAwMl8yODM2ODZCMV8xMDQxRSIsICJzdWIiOiAiNzY1NjExOTkxOTgyODA4MDEiLCAiYXVkIjogWyAid2ViOnN0b3JlIiBdLCAiZXhwIjogMTc4MDQ4ODAzNywgIm5iZiI6IDE3NzE3NjAxMTIsICJpYXQiOiAxNzgwNDAwMTEyLCAianRpIjogIjAwMThfMjgzRkMxQTlfMzdCOTQiLCAib2F0IjogMTc3OTQxNjk4NywgInJ0X2V4cCI6IDE3OTc2MDA0NDUsICJwZXIiOiAwLCAiaXBfc3ViamVjdCI6ICIyMjEuNi4xNzIuNCIsICJpcF9jb25maXJtZXIiOiAiMjIxLjYuMTcyLjQiIH0.PJxnxitykK-smyyCqnJmNnR4GHIEdmkrwplkooNyLptSvd0rXmrT7g0bQjWl7EukgESKYRPgitwgL9HARSV4DA&family_groupid=1893939&include_own=true&include_excluded=true&include_free=true&language=schinese&include_non_games=false&steamid=76561199198280801
+Name	    	    Type        value
+key	                string
+family_groupid	    fixed64     1893939
+include_own	        bool        true
+include_excluded    bool        true
+include_free	    bool        true
+language		    string      schinese
+max_apps		    uint32
+include_non_games	bool        false
+steamid		        fixed64

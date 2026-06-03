@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx vue-tsc *)",
+      "Bash(npx vite *)",
+      "mcp__ide__getDiagnostics",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(node dist/index.js)",
+      "Bash(curl -s http://localhost:3000/api/health)",
+      "Bash(curl -s http://localhost:3000/api/fastfetch)",
+      "Bash(curl -s http://localhost:3000/api/steam/steam-level)",
+      "Bash(curl -s http://localhost:3000/api/steam/player-summaries)",
+      "Bash(curl -s http://localhost:3000/api/steam/badges)",
+      "Bash(curl -s \"http://localhost:3000/api/steam/recently-played-games?count=3\")",
+      "Bash(kill %1)"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+
+                    -`
+                   .o+`
+                  `ooo/
+                 `+oooo:
+                `+oooooo:
+                -+oooooo+:
+              `/:-:++oooo+:
+             `/++++/+++++++:
+            `/++++++++++++++:
+           `/+++ooooooooooooo/`
+          ./ooosssso++osssssso+`
+         .oossssso-````/ossssss+`
+        -osssssso.      :ssssssso.
+       :osssssss/        osssso+++.
+      /ossssssss/        +ssssooo/-
+    `/ossssso+/:-        -:/+osssso+-
+   `+sso+:-`                 `.-/+oso:
+  `++:.                           `-/+/
+  .`                                 `/[1G[19A[49C
+[49COS Arch Linux x86_64
+[49C ├   KER  Linux 7.0.10-zen1-1-zen
+[49C ├   PAK  1499
+[49C └   USR  aoralsfout@ArchLinux
+[49C
+[49C
+[49CWM niri 26.04 (Wayland)
+[49C ├   SHE  fish 4.7.1
+[49C ├   TER  kitty 0.46.2
+[49C └   TFO  JetBrainsMapleMono-Regular (13.5pt)
+[49C
+[49C
+[49CPC  OMEN by HP Laptop 16-b0xxx
+[49C ├   CPU  11th Gen Intel(R) Core(TM) i7-11800H (16) @ 4.60 GHz
+[49C ├   MEM  8.18 GiB / 38.81 GiB (21%)
+[49C ├ 󰢮  GPU  NVIDIA GeForce RTX 3050 Ti Mobile
+[49C ├ 󰢮  GPU  Intel UHD Graphics
+[49C ├   MON  CMN160A 1920x1080@60 
+[49C ├   MON  LEN X23 1920x1080@60 
+[49C ├   MON  24G10ZE 1920x1080@240 
+[49C └ 󰋊  DIS  340.44 GiB / 390.15 GiB (87%) - btrfs
+[49C └ 󰋊  DIS  45.61 GiB / 488.28 GiB (9%) - ntfs3
+[49C └ 󰋊  DIS  214.36 GiB / 390.62 GiB (55%) - ntfs3
+[49C
+[49C
+[49C[40m   [41m   [42m   [43m   [44m   [45m   [46m   [47m   [m
+[49C[100m   [101m   [102m   [103m   [104m   [105m   [106m   [107m   [m
