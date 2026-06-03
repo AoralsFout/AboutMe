@@ -85,7 +85,7 @@ use --help or -h argument to learn more information about a command.`
     try {
       const res = await api.get('http://localhost:3030/api/fastfetch')
       if (res.status === 200) {
-        const data = res.data;
+        const data = res.data.content;
         return fastfetchFormat(data)
       } else {
         throw new Error('请求失败');
