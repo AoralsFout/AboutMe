@@ -92,7 +92,7 @@
             <section class="card tilt-l enter-right" ref="c4">
               <h3 class="card-title"><i class="fas fa-link"></i> 友情链接 <span class="en">Links</span></h3>
               <div class="link-list">
-                <a class="ref-link" href="https://github.com" target="_blank">
+                <a class="ref-link" href="https://github.com/AoralsFout/AboutMe" target="_blank">
                   <span class="ref-name">开源地址</span>
                   <span class="ref-desc">Github</span>
                 </a>
@@ -159,7 +159,7 @@ const unmount = () => {
   cardRefs.forEach(r => r.value?.classList.remove('in'))
 }
 
-defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'VortexField' })
+defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'ShatterWave' })
 </script>
 
 <style scoped>

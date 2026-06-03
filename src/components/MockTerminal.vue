@@ -83,7 +83,7 @@ use --help or -h argument to learn more information about a command.`
 
   async fastfetch() {
     try {
-      const res = await api.get('http://localhost:3030/api/fastfetch')
+      const res = await api.get('/api/fastfetch')
       if (res.status === 200) {
         const data = res.data.content;
         return fastfetchFormat(data)

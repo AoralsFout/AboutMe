@@ -242,7 +242,7 @@ const unmount = () => {
   colRefs.forEach(r => r.value?.classList.remove('in'))
   cardRefs.forEach(r => r.value?.classList.remove('in'))
 }
-defineExpose({ unmount, nextTransition: 'VortexField', prevTransition: 'ShatterWave' })
+defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'ShatterWave' })
 </script>
 
 <style scoped>
