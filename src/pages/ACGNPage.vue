@@ -40,7 +40,7 @@
           <div class="col col-left" ref="colA">
             <div class="section-card tilt-l enter-left" ref="animeEl" :style="{ transitionDelay: '0.1s' }">
               <h2 class="section-title">
-                <span class="sec-icon">🎬</span> Anime <span class="en">动画</span>
+                <span class="sec-icon"><i class="fas fa-film"></i></span> Anime <span class="en">动画</span>
               </h2>
 
               <!-- 生涯数据 -->
@@ -68,7 +68,7 @@
               </div>
 
               <!-- 最喜欢 -->
-              <h3 class="sub-title">&#10084; 最喜欢</h3>
+              <h3 class="sub-title"><i class="fas fa-heart"></i> 最喜欢</h3>
               <div class="anime-grid">
                 <template v-if="animeLoading">
                   <div class="anime-card skeleton" v-for="n in 20" :key="'sk1-' + n">
@@ -84,13 +84,13 @@
                   <img class="anime-cover" :src="a.subject.images.small" :alt="a.subject.name" loading="lazy" />
                   <div class="anime-card-info">
                     <span class="anime-card-name">{{ a.subject.name_cn || a.subject.name }}</span>
-                    <span class="anime-card-score">&#11088; {{ a.subject.score || '-' }}</span>
+                    <span class="anime-card-score"><i class="fas fa-star"></i> {{ a.subject.score || '-' }}</span>
                   </div>
                 </div>
               </div>
 
               <!-- 最近在看 -->
-              <h3 class="sub-title">&#128064; 最近在看</h3>
+              <h3 class="sub-title"><i class="fas fa-eye"></i> 最近在看</h3>
               <div class="anime-grid">
                 <template v-if="animeLoading">
                   <div class="anime-card skeleton" v-for="n in 10" :key="'sk2-' + n">
@@ -106,13 +106,13 @@
                   <img class="anime-cover" :src="a.subject.images.small" :alt="a.subject.name" loading="lazy" />
                   <div class="anime-card-info">
                     <span class="anime-card-name">{{ a.subject.name_cn || a.subject.name }}</span>
-                    <span class="anime-card-score">&#11088; {{ a.subject.score || '-' }}</span>
+                    <span class="anime-card-score"><i class="fas fa-star"></i> {{ a.subject.score || '-' }}</span>
                   </div>
                 </div>
               </div>
 
               <!-- 想要看 -->
-              <h3 class="sub-title">&#128064; 想要看</h3>
+              <h3 class="sub-title"><i class="fas fa-eye"></i> 想要看</h3>
               <div class="anime-grid">
                 <template v-if="animeLoading">
                   <div class="anime-card skeleton" v-for="n in 10" :key="'sk3-' + n">
@@ -128,7 +128,7 @@
                   <img class="anime-cover" :src="a.subject.images.small" :alt="a.subject.name" loading="lazy" />
                   <div class="anime-card-info">
                     <span class="anime-card-name">{{ a.subject.name_cn || a.subject.name }}</span>
-                    <span class="anime-card-score">&#11088; {{ a.subject.score || '-' }}</span>
+                    <span class="anime-card-score"><i class="fas fa-star"></i> {{ a.subject.score || '-' }}</span>
                   </div>
                 </div>
               </div>
@@ -140,7 +140,7 @@
             <!-- Comic -->
             <div class="section-card tilt-r enter-right" ref="comicEl">
               <h2 class="section-title">
-                <span class="sec-icon">📚</span> Comic <span class="en">漫画</span>
+                <span class="sec-icon"><i class="fas fa-book"></i></span> Comic <span class="en">漫画</span>
               </h2>
               <div class="inline-list">
                 <div class="inline-item" v-for="c in comicList" :key="c.title">
@@ -153,7 +153,7 @@
             <!-- Galgame -->
             <div class="section-card tilt-l enter-right" ref="galEl">
               <h2 class="section-title">
-                <span class="sec-icon">🎮</span> Galgame <span class="en">Ciallo~</span>
+                <span class="sec-icon"><i class="fas fa-gamepad"></i></span> Galgame <span class="en">Ciallo~</span>
               </h2>
               <div class="inline-list">
                 <div class="inline-item" v-for="g in galList" :key="g.title">
@@ -166,7 +166,7 @@
             <!-- Novel -->
             <div class="section-card tilt-r enter-right" ref="novelEl">
               <h2 class="section-title">
-                <span class="sec-icon">📖</span> Novel <span class="en">轻小说</span>
+                <span class="sec-icon"><i class="fas fa-book-open"></i></span> Novel <span class="en">轻小说</span>
               </h2>
               <div class="inline-list">
                 <div class="inline-item" v-for="n in novelList" :key="n.title">

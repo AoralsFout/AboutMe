@@ -47,7 +47,7 @@
         </div>
 
         <section class="card tilt-r enter-left" ref="eduEl" style="width: 400px;">
-          <h3 class="card-title">&#127891; 教育经历 <span class="en">Education</span></h3>
+          <h3 class="card-title"><i class="fas fa-graduation-cap"></i> 教育经历 <span class="en">Education</span></h3>
           <div class="edu-item">
             <div class="edu-dot" />
             <div class="edu-info">
@@ -60,22 +60,22 @@
         </section>
 
         <section class="card tilt-l enter-bottom" ref="linksEl" style="width: 300px;">
-          <h3 class="card-title">&#128279; 找到我 <span class="en">Links</span></h3>
+          <h3 class="card-title"><i class="fas fa-link"></i> 找到我 <span class="en">Links</span></h3>
           <div class="links-list">
-            <a class="link-item" href="#"><span>GitHub</span><span class="link-val">@AoralsFout</span></a>
-            <a class="link-item" href="#"><span>Blog</span><span class="link-val">aoralsfout.top</span></a>
-            <a class="link-item" href="#"><span>Email</span><span class="link-val">3250658422@qq.com</span></a>
-            <a class="link-item" href="#"><span>Email</span><span class="link-val">aoralsfout@gmail.com</span></a>
-            <a class="link-item" href="#"><span>QQ</span><span class="link-val">可</span></a>
-            <a class="link-item" href="#"><span>Steam</span><span class="link-val">OniiCHANN</span></a>
-            <a class="link-item" href="#"><span>Bilibili</span><span class="link-val">sFout</span></a>
+            <a class="link-item" href="https://github.com/AoralsFout"><span>GitHub</span><span class="link-val">@AoralsFout</span></a>
+            <a class="link-item" href="https://www.aoralsfout.top"><span>Blog</span><span class="link-val">aoralsfout.top</span></a>
+            <a class="link-item" href=""><span>Email</span><span class="link-val">3250658422@qq.com</span></a>
+            <a class="link-item" href=""><span>Email</span><span class="link-val">aoralsfout@gmail.com</span></a>
+            <a class="link-item" href=""><span>QQ</span><span class="link-val">可 3250658422</span></a>
+            <a class="link-item" href="https://steamcommunity.com/profiles/76561199198280801/"><span>Steam</span><span class="link-val">OniiCHANN</span></a>
+            <a class="link-item" href="https://space.bilibili.com/345054137"><span>Bilibili</span><span class="link-val">sFout</span></a>
           </div>
         </section>
       </div>
 
       <div class="col">
         <section class="card tilt-r enter-top gallery-card" ref="galleryEl" style="width: 300px;">
-          <h3 class="card-title">&#128247; 照片墙 <span class="en">Gallery</span></h3>
+          <h3 class="card-title"><i class="fas fa-camera"></i> 照片墙 <span class="en">Gallery</span></h3>
           <div class="carousel">
             <div class="carousel-track" :style="{ transform: `translateX(-${carouselIdx * 100}%)` }">
               <div class="carousel-slide" v-for="i in 4" :key="i" :style="{ background: slideColors[i - 1] }">
@@ -90,10 +90,10 @@
         </section>
 
         <section class="card tilt-l enter-right" ref="hobbyEl" style="width: 600px;">
-          <h3 class="card-title">&#127912; 兴趣爱好 <span class="en">Hobbies</span></h3>
+          <h3 class="card-title"><i class="fas fa-palette"></i> 兴趣爱好 <span class="en">Hobbies</span></h3>
           <div class="hobby-list">
             <div class="hobby-item" v-for="h in hobbies" :key="h.name">
-              <span class="hobby-icon">{{ h.icon }}</span>
+              <i class="hobby-icon" :class="h.icon" />
               <div class="hobby-body">
                 <strong class="hobby-name">{{ h.name }}</strong>
                 <p class="hobby-desc">{{ h.desc }}</p>
@@ -145,11 +145,11 @@ const slideColors = [
 ]
 
 const hobbies = [
-  { icon: '💻', name: '代码', desc: '喜欢研究软件开发相关的技术，这是我的主要方向，目前偏向前端开发。后端开发略有涉猎。' },
-  { icon: '⛩️', name: '动漫', desc: '小学就开始看了，喜欢轻松愉快类型的。异世界似乎也不错，比如无职转生我很喜欢。最近的新番厕纸流水线有点多，不太喜欢看。谁推荐几个老番让我补补口牙。是车万人。平常基本痛衣出门。' },
-  { icon: '🎮', name: '游戏', desc: 'Counter-Strike 2 玩家，完美平台，5E平台B分段。Java版Minecraft。Muse Dash。更多详情请看Steam主页喵owo。' },
-  { icon: '🎥', name: '媒体', desc: '能够使用Pr，Ps，Ae，Au等Adobe软件制作视频。研究过UTAU语音合成，Melodyne调音等人力调教相关技术。FlStudio音乐制作玩不明白orz。' },
-  { icon: '🪨', name: '3D', desc: '如果有时间希望深入学习Blender，使用过Blender辅助制作过Counter-Strike游戏击杀集锦，简单街道场景建模等。研究过3D渲染管线并使用Canvas画布简单实现，能够使用Three.js框架将3D结合到前端开发。其实我也很想做游戏，但是我的时间真的很少阿QwQ。' }
+  { icon: 'fas fa-laptop-code', name: '代码', desc: '喜欢研究软件开发相关的技术，这是我的主要方向，目前偏向前端开发。后端开发略有涉猎。' },
+  { icon: 'fas fa-torii-gate', name: '动漫', desc: '小学就开始看了，喜欢轻松愉快类型的。异世界似乎也不错，比如无职转生我很喜欢。最近的新番厕纸流水线有点多，不太喜欢看。谁推荐几个老番让我补补口牙。是车万人。平常基本痛衣出门。' },
+  { icon: 'fas fa-gamepad', name: '游戏', desc: 'Counter-Strike 2 玩家，完美平台，5E平台B分段。Java版Minecraft。Muse Dash。更多详情请看Steam主页喵owo。' },
+  { icon: 'fas fa-video', name: '媒体', desc: '能够使用Pr，Ps，Ae，Au等Adobe软件制作视频。研究过UTAU语音合成，Melodyne调音等人力调教相关技术。FlStudio音乐制作玩不明白orz。' },
+  { icon: 'fas fa-cube', name: '3D', desc: '如果有时间希望深入学习Blender，使用过Blender辅助制作过Counter-Strike游戏击杀集锦，简单街道场景建模等。研究过3D渲染管线并使用Canvas画布简单实现，能够使用Three.js框架将3D结合到前端开发。其实我也很想做游戏，但是我的时间真的很少阿QwQ。' }
 ]
 
 const carouselIdx = ref(0)

@@ -31,7 +31,7 @@
       <div class="main-grid">
         <div class="col col-left">
           <section class="card tilt-l enter-left" ref="langEl">
-            <h3 class="card-title">&#128187; 编程语言 <span class="en">Languages</span></h3>
+            <h3 class="card-title"><i class="fas fa-laptop-code"></i> 编程语言 <span class="en">Languages</span></h3>
             <div class="tag-group">
               <span class="tag tag-lg">TypeScript</span>
               <span class="tag tag-lg">JavaScript</span>
@@ -44,7 +44,7 @@
           </section>
 
           <section class="card tilt-r enter-left" ref="frontendEl">
-            <h3 class="card-title">&#127760; 前端 <span class="en">Frontend</span></h3>
+            <h3 class="card-title"><i class="fas fa-globe"></i> 前端 <span class="en">Frontend</span></h3>
             <div class="tag-group">
               <span class="tag tag-lg">Vue 3</span>
               <span class="tag tag-md">ElementPlus</span>
@@ -59,7 +59,7 @@
           </section>
 
           <section class="card tilt-l enter-left" ref="backendEl">
-            <h3 class="card-title">&#128295; 后端<span class="en">Backend</span></h3>
+            <h3 class="card-title"><i class="fas fa-wrench"></i> 后端<span class="en">Backend</span></h3>
             <div class="tag-group">
               <span class="tag tag-lg">Node.js</span>
               <span class="tag tag-md">Express</span>
@@ -70,24 +70,24 @@
           </section>
 
           <section class="card tilt-r enter-left" ref="envEl">
-            <h3 class="card-title">&#128187; 开发环境 <span class="en">Environment</span></h3>
+            <h3 class="card-title"><i class="fas fa-laptop-code"></i> 开发环境 <span class="en">Environment</span></h3>
             <div class="env-list">
               <div class="env-row">
-                <span class="env-icon">&#9000;</span>
+                <span class="env-icon"><i class="fas fa-pen"></i></span>
                 <div class="env-body">
                   <strong>开发工具</strong>
                   <p>VS Code / IDEA / DataGrip</p>
                 </div>
               </div>
               <div class="env-row">
-                <span class="env-icon">&#128193;</span>
+                <span class="env-icon"><i class="fas fa-folder"></i></span>
                 <div class="env-body">
                   <strong>操作系统</strong>
                   <p>Arch Linux / Windows 11</p>
                 </div>
               </div>
               <div class="env-row">
-                <span class="env-icon">&#128269;</span>
+                <span class="env-icon"><i class="fas fa-search"></i></span>
                 <div class="env-body">
                   <strong>硬件</strong>
                   <p>Intel i7-11800H / 40GB DDR4 / RTX 3050 Ti Moblie</p>

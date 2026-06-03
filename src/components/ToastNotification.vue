@@ -8,7 +8,7 @@
         :class="t.type"
         @click="dismiss(t.id)"
       >
-        <span class="toast-icon">{{ t.type === 'error' ? '&#10060;' : '&#8505;' }}</span>
+        <span class="toast-icon"><i v-if="t.type==='error'" class="fas fa-times-circle" /><i v-else class="fas fa-info-circle" /></span>
         <span class="toast-msg">{{ t.message }}</span>
       </div>
     </TransitionGroup>

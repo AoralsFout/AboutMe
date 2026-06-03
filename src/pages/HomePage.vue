@@ -42,7 +42,7 @@
 
           <div class="radio-card" ref="radioEl" @mouseenter="onIntroEnter" @mouseleave="onIntroLeave">
           <div class="radio-header">
-            <span class="radio-icon">🎵</span>
+            <i class="fas fa-music radio-icon" />
             <a class="radio-station" href="https://thmr.yunmoan.cn/" target="_blank"
               @click.stop="onRadioVisit">{{ radioData.stationName }}</a>
             <span class="radio-listeners">{{ radioData.listeners }} 听众</span>

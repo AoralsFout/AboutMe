@@ -22,7 +22,7 @@
           <!-- 左列：游戏库 -->
           <div class="col col-left" ref="colL">
             <section class="card tilt-l enter-left card-games" ref="c1">
-              <h3 class="card-title">&#128218; 游玩过的游戏 <span class="en">Library</span></h3>
+              <h3 class="card-title"><i class="fas fa-book"></i> 游玩过的游戏 <span class="en">Library</span></h3>
               <div class="games-header">
                 <span v-if="gameCards.length">{{ gameCards.length }} 款 · {{ totalHours }}h</span>
               </div>
@@ -47,7 +47,7 @@
               :style="profileBg ? { backgroundImage: `url(${profileBg})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}">
               <video v-if="profileVideo" class="profile-video" :src="profileVideo" autoplay muted loop playsinline />
               <div class="profile-bg-overlay" />
-              <h3 class="card-title">&#128100; 玩家信息 <span class="en">Profile</span></h3>
+              <h3 class="card-title"><i class="fas fa-user"></i> 玩家信息 <span class="en">Profile</span></h3>
               <div class="profile-row" v-if="playerSummaries?.response?.players?.[0]">
                 <div class="avatar-wrap">
                   <img class="avatar" :src="playerSummaries.response.players[0].avatarfull" alt="" />
@@ -80,7 +80,7 @@
             </section>
 
             <section class="card tilt-l enter-right" ref="c4">
-              <h3 class="card-title">&#127918; 最近游玩 <span class="en">Recent</span></h3>
+              <h3 class="card-title"><i class="fas fa-gamepad"></i> 最近游玩 <span class="en">Recent</span></h3>
               <div class="recent-list" v-if="recentlyPlayedGames?.response?.games">
                 <div class="recent-item" v-for="g in recentlyPlayedGames.response.games">
                   <img class="game-icon"
@@ -246,7 +246,10 @@ defineExpose({ unmount, nextTransition: 'VortexField', prevTransition: 'ShatterW
 </script>
 
 <style scoped>
+@import url("https://fontsapi.zeoseven.com/925/main/result.css");
+
 .steam {
+  font-family: "Ark Pixel 12px Prop latin";
   background: linear-gradient(160deg, #1b2838 0%, #171a21 40%, #1a1e26 100%);
   position: relative;
   width: 100%;

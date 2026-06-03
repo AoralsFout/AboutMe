@@ -23,7 +23,7 @@
           <!-- 左列 -->
           <div class="col" ref="colL">
             <section class="card tilt-l enter-left" ref="c1">
-              <h3 class="card-title">&#128161; 开发后记 <span class="en">Dev Notes</span></h3>
+              <h3 class="card-title"><i class="fas fa-lightbulb"></i> 开发后记 <span class="en">Dev Notes</span></h3>
               <p class="note-text">
                 这是我的个人网站的一部分，用于展示个人项目、技术栈和兴趣爱好。前端基于 Vue 3 + TypeScript + Vite 构建，后端使用 Node.js + Express 提供 API 服务。
               </p>
@@ -47,7 +47,7 @@
             </section>
 
             <section class="card tilt-r enter-left" ref="c2">
-              <h3 class="card-title">&#128736; 实现细节 <span class="en">Implementation</span></h3>
+              <h3 class="card-title"><i class="fas fa-tools"></i> 实现细节 <span class="en">Implementation</span></h3>
               <div class="detail-list">
                 <div class="detail-item">
                   <strong>视差滚动</strong>
@@ -72,7 +72,7 @@
           <!-- 右列 -->
           <div class="col" ref="colR">
             <section class="card tilt-r enter-right" ref="c3">
-              <h3 class="card-title">&#128214; 参阅的 API 文档 <span class="en">API References</span></h3>
+              <h3 class="card-title"><i class="fas fa-book"></i> 参阅的 API 文档 <span class="en">API References</span></h3>
               <div class="link-list">
                 <a class="ref-link" href="https://bangumi.github.io/api/" target="_blank">
                   <span class="ref-name">Bangumi API</span>
@@ -90,7 +90,7 @@
             </section>
 
             <section class="card tilt-l enter-right" ref="c4">
-              <h3 class="card-title">&#128279; 友情链接 <span class="en">Links</span></h3>
+              <h3 class="card-title"><i class="fas fa-link"></i> 友情链接 <span class="en">Links</span></h3>
               <div class="link-list">
                 <a class="ref-link" href="https://github.com" target="_blank">
                   <span class="ref-name">开源地址</span>
@@ -112,7 +112,7 @@
             </section>
 
             <section class="card tilt-r enter-right" ref="c5">
-              <h3 class="card-title">&#128172; 致谢 <span class="en">Thanks</span></h3>
+              <h3 class="card-title"><i class="fas fa-comment"></i> 致谢 <span class="en">Thanks</span></h3>
               <p class="note-text">
                 感谢 bangumi / Steam 提供的开放 API 和数据支持。
                 感谢 Vue / Vite / TypeScript 社区提供的优秀工具链。

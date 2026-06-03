@@ -343,6 +343,8 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+@import url("https://fontsapi.zeoseven.com/521/main/result.css");
+
 .mock-terminal {
   height: 100%;
   box-sizing: border-box;
@@ -350,7 +352,7 @@ onUnmounted(() => {
   flex-direction: column;
   background: rgba(0, 0, 0, 0.75);
   padding: 14px 16px;
-  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-family: 'JetBrains Maple Mono', monospace;
   font-size: 10px;
   color: #e0d8d0;
   overflow: hidden;
