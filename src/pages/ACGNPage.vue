@@ -675,7 +675,7 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'BlocksSh
   opacity: 1;
 }
 
-.scenery{
+.scenery {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1066,5 +1066,43 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'BlocksSh
 .inline-item span {
   color: rgba(100, 70, 30, 0.35);
   font-size: 10px;
+}
+
+@media (max-width: 768px) {
+  .grid-wrap {
+    align-items: flex-start;
+  }
+
+  .main-grid {
+    padding: 0;
+    margin-top: 40px;
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 40px);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+
+    .anime-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .col {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+  }
+
+  .col-left {
+    padding-top: 40px;
+  }
+
+  .col-right:last-child {
+    padding-bottom: 80px;
+  }
+
+  .anime-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 </style>

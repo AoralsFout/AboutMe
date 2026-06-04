@@ -1,7 +1,7 @@
 <template>
   <div class="page about">
-    <SpringSignboard side="left" board-image="/images/Nishikigi Chisato.png" />
-    <SpringSignboard side="right" board-image="/images/Inoue Takina.png" />
+    <SpringSignboard side="left" board-image="/images/Nishikigi Chisato.png" v-if="enabled" />
+    <SpringSignboard side="right" board-image="/images/Inoue Takina.png" v-if="enabled" />
     <div class="layer" :style="backStyle">
       <div class="bg-gradient" ref="backEl" />
     </div>
@@ -62,13 +62,17 @@
         <section class="card tilt-l enter-bottom" ref="linksEl" style="width: 300px;">
           <h3 class="card-title"><i class="fas fa-link"></i> 找到我 <span class="en">Links</span></h3>
           <div class="links-list">
-            <a class="link-item" href="https://github.com/AoralsFout"><span>GitHub</span><span class="link-val">@AoralsFout</span></a>
-            <a class="link-item" href="https://www.aoralsfout.top"><span>Blog</span><span class="link-val">aoralsfout.top</span></a>
+            <a class="link-item" href="https://github.com/AoralsFout"><span>GitHub</span><span
+                class="link-val">@AoralsFout</span></a>
+            <a class="link-item" href="https://www.aoralsfout.top"><span>Blog</span><span
+                class="link-val">aoralsfout.top</span></a>
             <a class="link-item" href=""><span>Email</span><span class="link-val">3250658422@qq.com</span></a>
             <a class="link-item" href=""><span>Email</span><span class="link-val">aoralsfout@gmail.com</span></a>
             <a class="link-item" href=""><span>QQ</span><span class="link-val">可 3250658422</span></a>
-            <a class="link-item" href="https://steamcommunity.com/profiles/76561199198280801/"><span>Steam</span><span class="link-val">OniiCHANN</span></a>
-            <a class="link-item" href="https://space.bilibili.com/345054137"><span>Bilibili</span><span class="link-val">sFout</span></a>
+            <a class="link-item" href="https://steamcommunity.com/profiles/76561199198280801/"><span>Steam</span><span
+                class="link-val">OniiCHANN</span></a>
+            <a class="link-item" href="https://space.bilibili.com/345054137"><span>Bilibili</span><span
+                class="link-val">sFout</span></a>
           </div>
         </section>
       </div>
@@ -107,7 +111,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useParallax } from '@/composables/useParallax'
 import SpringSignboard from '@/components/SpringSignboard.vue'
 
@@ -156,6 +160,10 @@ const hobbies = [
 
 const carouselIdx = ref(0)
 let carouselTimer: ReturnType<typeof setInterval> | null = null
+
+const enabled = computed(() => {
+  return window.innerWidth > 768
+})
 
 const backEl = ref<HTMLElement | null>(null);
 const titleEl = ref<HTMLElement | null>(null)
@@ -806,5 +814,33 @@ defineExpose({ unmount, nextTransition: 'BlocksShift', prevTransition: 'StripesS
   font-size: 12px;
   color: rgba(60, 100, 85, 0.38);
   line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .layer-front {
+    padding-top: 40px;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 40px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+  }
+
+  .enter-right {
+    margin-bottom: 80px;
+  }
+
+  .col {
+    align-items: center !important;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+  }
+
+  .card {
+    width: 80% !important;
+  }
 }
 </style>

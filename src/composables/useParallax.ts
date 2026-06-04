@@ -41,9 +41,10 @@ export function useParallax(depth: number = 1) {
   })
 
   const maxOffset = 30
+  const enabled = computed(() => window.innerWidth >= 768 ? 1 : 0);
 
   return computed(() => ({
-    transform: `translate3d(${mouseX.value * depth * maxOffset}px, ${mouseY.value * depth * maxOffset}px, 0)`,
+    transform: `translate3d(${mouseX.value * depth * maxOffset * enabled.value}px, ${mouseY.value * depth * maxOffset * enabled.value}px, 0)`,
     transition: 'transform 0.15s ease-out',
   }))
 }

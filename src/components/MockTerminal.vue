@@ -353,7 +353,7 @@ onUnmounted(() => {
   background: rgba(0, 0, 0, 0.75);
   padding: 14px 16px;
   font-family: 'JetBrains Maple Mono', monospace;
-  font-size: 10px;
+  font-size: clamp(2px, 0.8vw, 10px);
   color: #e0d8d0;
   overflow: hidden;
   cursor: text;
@@ -403,8 +403,8 @@ onUnmounted(() => {
 .cursor {
   position: absolute;
   left: 0;
-  height: 14px;
-  width: 6px;
+  height: clamp(2px, 0.8vw, 10px);
+  width: clamp(1px, 0.4vw, 5px);
   background: rgba(220, 200, 180, 0.85);
   transform: translateY(-50%);
   animation: cursor-blink 0.8s step-end infinite;

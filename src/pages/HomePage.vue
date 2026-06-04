@@ -41,31 +41,27 @@
           </div>
 
           <div class="radio-card" ref="radioEl" @mouseenter="onIntroEnter" @mouseleave="onIntroLeave">
-          <div class="radio-header">
-            <i class="fas fa-music radio-icon" />
-            <a class="radio-station" href="https://thmr.yunmoan.cn/" target="_blank"
-              @click.stop="onRadioVisit">{{ radioData.stationName }}</a>
-            <span class="radio-listeners">{{ radioData.listeners }} 听众</span>
-          </div>
-          <div class="radio-meta">
-            <span class="radio-track" :title="radioData.trackTitle">{{ radioData.trackTitle }}</span>
-            <span class="radio-artist">{{ radioData.artist }}</span>
-          </div>
-          <div class="radio-controls">
-            <button class="radio-toggle" :class="{ playing }" @click.stop="onRadioToggle">
-              <span v-if="playing">⏸</span>
-              <span v-else>▶</span>
-            </button>
-            <div class="radio-spectrum" ref="spectrumEl">
-              <span
-                v-for="i in 16" :key="i"
-                class="spectrum-bar"
-                :style="{ height: spectrumBars[i - 1] + '%' }"
-              />
+            <div class="radio-header">
+              <i class="fas fa-music radio-icon" />
+              <a class="radio-station" href="https://thmr.yunmoan.cn/" target="_blank" @click.stop="onRadioVisit">{{
+                radioData.stationName }}</a>
+              <span class="radio-listeners">{{ radioData.listeners }} 听众</span>
             </div>
+            <div class="radio-meta">
+              <span class="radio-track" :title="radioData.trackTitle">{{ radioData.trackTitle }}</span>
+              <span class="radio-artist">{{ radioData.artist }}</span>
+            </div>
+            <div class="radio-controls">
+              <button class="radio-toggle" :class="{ playing }" @click.stop="onRadioToggle">
+                <span v-if="playing">⏸</span>
+                <span v-else>▶</span>
+              </button>
+              <div class="radio-spectrum" ref="spectrumEl">
+                <span v-for="i in 16" :key="i" class="spectrum-bar" :style="{ height: spectrumBars[i - 1] + '%' }" />
+              </div>
+            </div>
+            <div class="radio-error" v-if="radioData.error">{{ radioData.error }}</div>
           </div>
-          <div class="radio-error" v-if="radioData.error">{{ radioData.error }}</div>
-        </div>
         </div>
       </div>
     </div>
@@ -190,7 +186,7 @@ function runTypewriter(now: number) {
     typewriterText.value = current.slice(0, charIdx)
     if (charIdx >= current.length) {
       deleting = true
-      lastTime = now + 2000                                                                                         
+      lastTime = now + 2000
       rafId = requestAnimationFrame(runTypewriter)
       return
     }
@@ -200,7 +196,7 @@ function runTypewriter(now: number) {
     if (charIdx <= 0) {
       deleting = false
       sentenceIdx = (sentenceIdx + 1) % sentences.length
-      lastTime = now + 400                                                                                          
+      lastTime = now + 400
       rafId = requestAnimationFrame(runTypewriter)
       return
     }
@@ -330,7 +326,9 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'VortexFi
   height: 100%;
   background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='10' y1='0' x2='110' y2='0' stroke='%23a8b8c8' stroke-width='1.5'/%3E%3Cline x1='0' y1='10' x2='0' y2='110' stroke='%23a8b8c8' stroke-width='1.5'/%3E%3Cline x1='10' y1='10' x2='110' y2='110' stroke='%23c8d0db' stroke-width='1' stroke-dasharray='4,4'/%3E%3Cline x1='110' y1='10' x2='10' y2='110' stroke='%23c8d0db' stroke-width='1' stroke-dasharray='4,4'/%3E%3Ccircle cx='0' cy='0' r='2' fill='%2347566b'/%3E%3Ccircle cx='120' cy='0' r='2' fill='%2347566b'/%3E%3Ccircle cx='0' cy='120' r='2' fill='%2347566b'/%3E%3Ccircle cx='120' cy='120' r='2' fill='%2347566b'/%3E%3C/svg%3E");
   background-size: 120px 120px;
+-webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 30%, transparent 70%);
   mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 30%, transparent 70%);
+-webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 30%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 30%, transparent 70%);
   opacity: 0;
   transition: opacity 0.8s ease-out;
@@ -343,14 +341,14 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'VortexFi
 /* ===== 背景线稿层 ===== */
 .bg-lineart {
   position: absolute;
-  right: -20%;
+  right: 30%;
   bottom: -5%;
   height: 90%;
   width: auto;
   pointer-events: none;
   user-select: none;
   opacity: 0;
-  transform: translateX(200px);
+  transform: translateX(calc(80% + 200px));
 
   transition: opacity 1s ease-out,
     transform 2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -358,7 +356,7 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'VortexFi
 
 .bg-lineart.in {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(80%);
 }
 
 /* ===== 中层 - 标题 ===== */
@@ -553,7 +551,7 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'VortexFi
   height: 100%;
   padding: 0 10%;
   pointer-events: auto;
-  transform: translate(-200px,50px);
+  transform: translate(-200px, 50px);
 }
 
 .intro-col {
@@ -696,7 +694,7 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'VortexFi
   opacity: 0;
   transform: translateY(20px);
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.6s ease-out 0.5s;
+    opacity 0.6s ease-out 0.5s;
 }
 
 .radio-card.in {
@@ -711,7 +709,9 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'VortexFi
   margin-bottom: 6px;
 }
 
-.radio-icon { font-size: 14px; }
+.radio-icon {
+  font-size: 14px;
+}
 
 .radio-station {
   font-size: 12px;
@@ -815,5 +815,17 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'VortexFi
   margin-top: 6px;
   font-size: 10px;
   color: rgba(180, 80, 80, 0.5);
+}
+
+@media (max-width: 768px) {
+  .front-row {
+    flex-direction: column;
+    gap: 20px;
+    transform: translate(0, 0);
+  }
+
+  .intro-col {
+    align-items: center;
+  }
 }
 </style>

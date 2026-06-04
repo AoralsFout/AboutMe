@@ -354,10 +354,30 @@ defineExpose({ unmount, nextTransition: 'DotsWave', prevTransition: 'ShatterWave
   align-content: center;
 }
 
+@media (max-width: 768px) {
+  .main-grid {
+    width: 90%;
+    gap: 14px;
+    margin-top: 40px;
+    align-content: flex-start;
+    height: calc(100vh - 40px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+  }
+}
+
 .col {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+
+  &:last-child {
+    padding-bottom: 80px;
+  }
 }
 
 .col-right {
@@ -487,5 +507,16 @@ defineExpose({ unmount, nextTransition: 'DotsWave', prevTransition: 'ShatterWave
   background: transparent;
   overflow: hidden;
   height: 500px;
+}
+
+@media (max-width: 768px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .col-left,
+  .col-right {
+    width: 100%;
+  }
 }
 </style>

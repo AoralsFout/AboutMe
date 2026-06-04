@@ -395,6 +395,12 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'ShatterW
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .grid-wrap {
+    align-items: flex-start;
+  }
+}
+
 .main-grid {
   width: 88%;
   height: 90%;
@@ -776,6 +782,12 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'ShatterW
   gap: 8px;
 }
 
+@media (max-width: 768px) {
+  .skel-games {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .skel-card {
   border-radius: 8px;
   aspect-ratio: 460/215;
@@ -869,6 +881,38 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'ShatterW
 
   100% {
     background-position: -200% 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-grid {
+    padding-top: 40px;
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    grid-auto-rows: max-content;
+
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+
+    .games-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .col {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+  }
+
+  .col-right:last-child {
+    margin-bottom: 80px;
+  }
+
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 </style>

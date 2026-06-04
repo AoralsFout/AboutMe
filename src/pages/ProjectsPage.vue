@@ -516,6 +516,7 @@ defineExpose({ unmount, nextTransition: 'StripesSwipe', prevTransition: 'DotsWav
   opacity: 0;
   transform: translateY(-200px);
   transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease-out;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 90%, transparent 100%);
   mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 90%, transparent 100%);
 
   &::-webkit-scrollbar {
@@ -747,5 +748,25 @@ defineExpose({ unmount, nextTransition: 'StripesSwipe', prevTransition: 'DotsWav
 
 .detail-img:hover {
   transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+
+  .flex-wrap {
+    align-items: flex-start;
+  }
+
+  .main-flex {
+    flex-direction: column;
+    margin-top: 50px;
+    height: calc(100% - 100px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .col-left,
+  .col-right {
+    width: 100%;
+  }
 }
 </style>

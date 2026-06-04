@@ -452,4 +452,37 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'ShatterW
   font-size: 11px;
   color: rgba(180, 200, 220, 0.35);
 }
+
+@media (max-width: 768px) {
+  .flex-wrap {
+    align-items: flex-start;
+  }
+
+  .main-flex {
+    width: 90%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 40px;
+    height: calc(100vh - 40px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+  }
+
+  .col {
+    min-height: auto;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
+  }
+
+  .card:first-child {
+    margin-top: 40px;
+  }
+
+  .col:last-child {
+    margin-bottom: 80px;
+  }
+}
 </style>
