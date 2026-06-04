@@ -1,9 +1,15 @@
 import https from 'node:https'
+import { HttpsProxyAgent } from 'https-proxy-agent'
 import { config } from '../config'
 
 const STEAM_API_HOST = 'api.steampowered.com'
 const STORE_API_HOST = 'store.steampowered.com'
-const agent = new https.Agent({ rejectUnauthorized: false })
+
+// 如果设置 http_proxy/https_proxy 环境变量，则走代理（用于 Mihomo 等）
+const proxyUrl = process.env.http_proxy || process.env.https_proxy || process.env.HTTP_PROXY || process.env.HTTPS_PROXY || ''
+const agent: https.Agent = proxyUrl
+  ? (new HttpsProxyAgent(proxyUrl) as unknown as https.Agent)
+  : new https.Agent({ rejectUnauthorized: false })
 
 function httpsGet<T>(hostname: string, path: string, headers?: Record<string, string>): Promise<T> {
   return new Promise((resolve, reject) => {
