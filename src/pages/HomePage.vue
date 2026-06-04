@@ -302,7 +302,7 @@ const unmount = () => {
   spectrumEl.value?.classList.remove('in')
 }
 
-defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'VortexField' })
+defineExpose({ unmount, nextTransition: 'StripesSwipe', prevTransition: 'StripesSwipe' })
 </script>
 
 <style scoped>

@@ -285,7 +285,7 @@ const unmount = () => {
   entered.value = false
 }
 
-defineExpose({ unmount, nextTransition: 'StripesSwipe', prevTransition: 'DotsWave' })
+defineExpose({ unmount, nextTransition: 'StripesSwipe', prevTransition: 'StripesSwipe' })
 </script>
 
 <style scoped>

@@ -230,7 +230,7 @@ const unmount = () => {
   if (carouselTimer) clearInterval(carouselTimer)
 }
 
-defineExpose({ unmount, nextTransition: 'BlocksShift', prevTransition: 'StripesSwipe' })
+defineExpose({ unmount, nextTransition: 'StripesSwipe', prevTransition: 'StripesSwipe' })
 </script>
 
 <style scoped>

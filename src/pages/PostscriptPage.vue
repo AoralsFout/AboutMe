@@ -161,7 +161,7 @@ const unmount = () => {
   cardRefs.forEach(r => r.value?.classList.remove('in'))
 }
 
-defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'ShatterWave' })
+defineExpose({ unmount, nextTransition: 'StripesSwipe', prevTransition: 'StripesSwipe' })
 </script>
 
 <style scoped>

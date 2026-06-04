@@ -211,7 +211,7 @@ onMounted(() => {
 
 const unmount = () => allRefs.forEach(r => r.value?.classList.remove('in'))
 
-defineExpose({ unmount, nextTransition: 'DotsWave', prevTransition: 'ShatterWave' })
+defineExpose({ unmount, nextTransition: 'StripesSwipe', prevTransition: 'StripesSwipe' })
 </script>
 
 <style scoped>
