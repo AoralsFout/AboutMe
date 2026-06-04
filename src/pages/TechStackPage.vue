@@ -372,8 +372,6 @@ defineExpose({ unmount, nextTransition: 'DotsWave', prevTransition: 'ShatterWave
   display: flex;
   flex-direction: column;
   gap: 14px;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
 
   &:last-child {
     padding-bottom: 80px;

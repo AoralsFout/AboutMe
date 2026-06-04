@@ -835,8 +835,6 @@ defineExpose({ unmount, nextTransition: 'BlocksShift', prevTransition: 'StripesS
 
   .col {
     align-items: center !important;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
   }
 
   .card {
