@@ -62,7 +62,7 @@ onMounted(() => {
   display: flex; align-items: center; justify-content: center;
   animation: fade-out 0.8s ease-out both;
 }
-.stage { width: 100vw; height: 100vh; }
+.stage { width: 100vw; height: 100dvh; }
 
 /* --- 膨胀环 --- */
 .v-ring {

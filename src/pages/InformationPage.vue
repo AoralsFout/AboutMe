@@ -238,7 +238,7 @@ defineExpose({ unmount, nextTransition: 'BlocksShift', prevTransition: 'StripesS
   background: linear-gradient(160deg, #f5faf8 0%, #edf5f1 40%, #f2f7f4 100%);
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -822,7 +822,7 @@ defineExpose({ unmount, nextTransition: 'BlocksShift', prevTransition: 'StripesS
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 40px;
-    height: calc(100vh - 80px);
+    height: calc(100dvh - 80px);
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);

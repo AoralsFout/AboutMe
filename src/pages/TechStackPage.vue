@@ -219,7 +219,7 @@ defineExpose({ unmount, nextTransition: 'DotsWave', prevTransition: 'ShatterWave
   background: linear-gradient(160deg, #fdf8f2 0%, #faf3e8 40%, #fdf6ef 100%);
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -360,7 +360,7 @@ defineExpose({ unmount, nextTransition: 'DotsWave', prevTransition: 'ShatterWave
     gap: 14px;
     margin-top: 40px;
     align-content: flex-start;
-    height: calc(100vh - 40px);
+    height: calc(100dvh - 40px);
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);

@@ -310,7 +310,7 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'VortexFi
   background: linear-gradient(160deg, #fef5f5 0%, #fde8ec 40%, #fdf0f3 100%);
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 

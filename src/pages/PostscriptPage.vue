@@ -464,7 +464,7 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'ShatterW
     justify-content: flex-start;
     flex-direction: column;
     margin-top: 40px;
-    height: calc(100vh - 40px);
+    height: calc(100dvh - 40px);
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);

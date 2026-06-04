@@ -1079,7 +1079,7 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'BlocksSh
     grid-template-columns: 1fr;
     overflow-y: auto;
     overflow-x: hidden;
-    height: calc(100vh - 40px);
+    height: calc(100dvh - 40px);
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
     mask-image: linear-gradient(to bottom, transparent 0%, white 10%, white 100%);
 

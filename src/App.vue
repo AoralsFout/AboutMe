@@ -141,14 +141,14 @@ provide(RADIO_KEY, {
 .pm-container {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
 .pm-slot {
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   transition: left 0.4s ease-in-out;
 }
 </style>

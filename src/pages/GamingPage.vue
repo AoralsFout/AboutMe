@@ -889,7 +889,7 @@ defineExpose({ unmount, nextTransition: 'ShatterWave', prevTransition: 'ShatterW
     padding-top: 40px;
     grid-template-columns: 1fr;
     margin-top: 40px;
-    height: calc(100vh - 80px);
+    height: calc(100dvh - 80px);
     overflow-y: auto;
     overflow-x: hidden;
     grid-auto-rows: max-content;
