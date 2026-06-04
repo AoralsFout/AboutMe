@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vite App</title>
+  <title></title>
   <style>
     @import url("https://fontsapi.zeoseven.com/282/main/result.css");
 
@@ -23,3 +23,18 @@
 </body>
 
 </html>
+<script>
+  let lastTitle = "Welcome! | 关于我 | About Me";
+  // 页面失焦
+  window.onblur = () => {
+    lastTitle = document.title;
+    document.title = "补药离开我QAQ"
+  }
+  // 页面聚焦
+  window.onfocus = () => {
+    document.title = "欢迎回来 >w<"
+    timer = setTimeout(() => {
+      document.title = lastTitle;
+    }, 5000);
+  }
+</script>

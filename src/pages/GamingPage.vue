@@ -113,6 +113,8 @@ import { useParallax } from '@/composables/useParallax'
 import { WHEEL_CONTROL_KEY } from '@/composables/usePageSwitcher'
 import { steamApi, api } from '@/api/client'
 
+document.title = "游戏 | Gaming"
+
 const wheelControl = inject(WHEEL_CONTROL_KEY)
 function onGamesEnter() { wheelControl?.setWheelEnabled(false) }
 function onGamesLeave() { wheelControl?.setWheelEnabled(true) }

@@ -73,6 +73,8 @@ import { computed, onMounted, ref, inject } from 'vue'
 import { WHEEL_CONTROL_KEY } from '@/composables/usePageSwitcher'
 import { useParallax } from '@/composables/useParallax'
 
+document.title = "项目 | Projects"
+
 const wheelControl = inject(WHEEL_CONTROL_KEY)
 function onListEnter() { wheelControl?.setWheelEnabled(false) }
 function onListLeave() { wheelControl?.setWheelEnabled(true) }

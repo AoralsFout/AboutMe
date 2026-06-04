@@ -187,6 +187,8 @@ import { onMounted, ref } from 'vue'
 import { useParallax } from '@/composables/useParallax'
 import { api } from '@/api/client'
 
+document.title = "二次元 | ACGN"
+
 const url = 'https://api.bangumi.one'
 
 const backStyle = useParallax(0.15)

@@ -143,7 +143,7 @@ use --help or -h argument to learn more information about a command.`
       `${H}${b}Website${r}`,
       `  ${W}URL${r}           ${location.origin}`,
       `  ${W}Tech Stack${r}    Vue3 Typescript`,
-      `  ${W}Open Source${r}   https://github.com/example`,
+      `  ${W}Open Source${r}   https://github.com/AoralsFout/AboutMe`,
     ]
 
     const icon = `                                                 

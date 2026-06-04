@@ -111,6 +111,8 @@ import { onMounted, onUnmounted, ref } from 'vue'
 import { useParallax } from '@/composables/useParallax'
 import SpringSignboard from '@/components/SpringSignboard.vue'
 
+document.title = "信息 | Information"
+
 const backStyle = useParallax(0.15)
 const titleStyle = useParallax(0.3)
 const decoStyle = useParallax(0.5)

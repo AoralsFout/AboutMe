@@ -114,6 +114,8 @@ import { useParallax } from '@/composables/useParallax'
 import { WHEEL_CONTROL_KEY } from '@/composables/usePageSwitcher'
 import MockTerminal from '@/components/MockTerminal.vue'
 
+document.title = "技术栈 | Tech Stack"
+
 const wheelControl = inject(WHEEL_CONTROL_KEY)
 function onTerminalEnter() { wheelControl?.setWheelEnabled(false) }
 function onTerminalLeave() { wheelControl?.setWheelEnabled(true) }

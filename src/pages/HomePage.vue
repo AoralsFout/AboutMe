@@ -78,6 +78,8 @@ import { useParallax } from '@/composables/useParallax'
 import { WHEEL_CONTROL_KEY } from '@/composables/usePageSwitcher'
 import { RADIO_KEY } from '@/components/RadioControls.vue'
 
+document.title = "Welcome! | 关于我 | About Me"
+
 const backStyle = useParallax(0.2)
 const titleStyle = useParallax(0.4)
 const midStyle = useParallax(0.6)

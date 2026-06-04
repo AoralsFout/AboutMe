@@ -3,7 +3,8 @@ import { useToast } from '@/composables/useToast'
 
 // 开发环境通过 Vite proxy 转发到 localhost:3030
 // 生产环境需配置 Nginx 反向代理或直接指向 API 服务器
-const baseURL = import.meta.env.DEV ? '' : 'http://localhost:3030'
+// const baseURL = import.meta.env.DEV ? '' : 'http://localhost:3030'
+const baseURL = ''
 
 export const api = axios.create({ baseURL })
 

@@ -130,6 +130,8 @@
 import { onMounted, ref } from 'vue'
 import { useParallax } from '@/composables/useParallax'
 
+document.title = "后记 | Postscript"
+
 const backStyle = useParallax(0.1)
 const waveStyle = useParallax(0.2)
 const titleStyle = useParallax(0.25)
