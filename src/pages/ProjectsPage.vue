@@ -144,6 +144,15 @@ const projects = [
     columns: 1,
   },
   {
+    name: 'Kisaki',
+    brief: '基于 Tauri + Vue 3 的桌面桌宠应用',
+    tags: ['Vue 3', 'TypeScript', 'Node.js', 'Prisma', 'MySQL'],
+    desc: '基于 Tauri + Vue 3 的桌面桌宠应用。支持Windows、MacOS、Linux平台运行。支持OpenAI兼容模型AI对话。支持工具调用。直接导入导出立绘角色包。支持像素级鼠标穿透。集成阿里云百炼CosyVoice TTS语音合成，支持多语言语音输出。支持会话管理。',
+    links: [{ label: 'Website', url: 'https://kisaki.aoralsfout.top' }, { label: 'GitHub', url: 'https://github.com/AoralsFout/Kisaki' }],
+    images: ['Kisaki.png'],
+    columns: 2,
+  },
+  {
     name: 'Music Player',
     brief: 'Web 音乐播放器',
     tags: ['Vue 3', 'TypeScript', 'JavaScript'],
