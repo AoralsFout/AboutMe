@@ -189,7 +189,7 @@ import { api } from '@/api/client'
 
 document.title = "二次元 | ACGN"
 
-const url = 'https://api.bangumi.one'
+const url = 'https://api.bangumi.lol'
 
 const backStyle = useParallax(0.15)
 const titleStyle = useParallax(0.25)
