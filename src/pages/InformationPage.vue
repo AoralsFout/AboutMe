@@ -153,9 +153,9 @@ const slideColors = [
 const hobbies = [
   { icon: 'fas fa-laptop-code', name: '代码', desc: '喜欢研究软件开发相关的技术，这是我的主要方向，目前偏向前端开发。后端开发略有涉猎。' },
   { icon: 'fas fa-torii-gate', name: '动漫', desc: '小学就开始看了，喜欢轻松愉快类型的。异世界似乎也不错，比如无职转生我很喜欢。最近的新番厕纸流水线有点多，不太喜欢看。谁推荐几个老番让我补补口牙。是车万人。平常基本痛衣出门。' },
-  { icon: 'fas fa-gamepad', name: '游戏', desc: 'Counter-Strike 2 玩家，完美平台，5E平台B分段。Java版Minecraft。Muse Dash。更多详情请看Steam主页喵owo。' },
+  { icon: 'fas fa-gamepad', name: '游戏', desc: 'Counter-Strike 2 玩家，完美平台，5E平台B分段。Java版Minecraft。Muse Dash。更多详情请看Steam主页喵owo。最近有在学习GDScript和C#了解游戏开发~' },
   { icon: 'fas fa-video', name: '媒体', desc: '能够使用Pr，Ps，Ae，Au等Adobe软件制作视频。研究过UTAU语音合成，Melodyne调音等人力调教相关技术。FlStudio音乐制作玩不明白orz。' },
-  { icon: 'fas fa-cube', name: '3D', desc: '如果有时间希望深入学习Blender，使用过Blender辅助制作过Counter-Strike游戏击杀集锦，简单街道场景建模等。研究过3D渲染管线并使用Canvas画布简单实现，能够使用Three.js框架将3D结合到前端开发。其实我也很想做游戏，但是我的时间真的很少阿QwQ。' }
+  { icon: 'fas fa-cube', name: '3D', desc: '学习Blender中。研究过3D渲染管线并使用Canvas画布简单实现，能够使用Three.js框架将3D结合到前端开发。' }
 ]
 
 const carouselIdx = ref(0)

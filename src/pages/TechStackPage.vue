@@ -36,8 +36,10 @@
               <span class="tag tag-lg">TypeScript</span>
               <span class="tag tag-lg">JavaScript</span>
               <span class="tag tag-md">C / C++</span>
-              <span class="tag tag-md">Dart</span>
               <span class="tag tag-md">Java</span>
+              <span class="tag tag-md">C#</span>
+              <span class="tag tag-md">GDScript</span>
+              <span class="tag">Dart</span>
               <span class="tag">Python</span>
               <span class="tag">Rust</span>
             </div>
