@@ -189,8 +189,6 @@ import { api } from '@/api/client'
 
 document.title = "二次元 | ACGN"
 
-const url = 'https://api.bangumi.lol'
-
 const backStyle = useParallax(0.15)
 const titleStyle = useParallax(0.25)
 const sceneryStyle = useParallax(0.2)
@@ -504,14 +502,9 @@ const danmakuList = [
   { id: 150, text: 'すき', y: 28, duration: 13, delay: 150, opacity: '0.18', size: 20 },
 ]
 
-interface Response {
+interface AnimeCollectionsResponse {
   "total": number,
-  "limit": number,
-  "offset": number,
-  "data": Anime[],
-  "title": string,
-  "description": string,
-  "details": string
+  "data": Anime[]
 }
 
 interface Tag {
@@ -554,14 +547,12 @@ interface Anime {
   "private": boolean
 }
 
-const careerStats = { watched: 0, watching: 0, want: 0, postpone: 0, abandoned: 0 }
+const careerStats = ref({ watched: 0, watching: 0, want: 0, postpone: 0, abandoned: 0 })
 
 const favoriteAnime = ref<Anime[]>([])
 const watchingAnime = ref<Anime[]>([])
 const wantAnime = ref<Anime[]>([])
 const animeLoading = ref(true)
-const postponeAnime = ref<Anime[]>([])
-const abandonedAnime = ref<Anime[]>([])
 
 const comicList = [
   { title: '东方三月精（とうほうさんげつせい）～ Visionary Fairies in Shrine 1-3', author: 'Zun/比良坂真琴', note: '好看' },
@@ -585,109 +576,17 @@ const novelList = [
   { title: '不看了QwQ，纯文字还是比不上动画饿啊(', author: 'Undefined', note: '正在开发ing...' }
 ]
 
-const getFavoriteAnime = async () => {
+const getAnimeCollection = async (
+  category: 'favorites' | 'watching' | 'want' | 'postpone' | 'abandoned',
+  stat: keyof typeof careerStats.value,
+  list?: typeof favoriteAnime,
+) => {
   try {
-    let allData: Anime[] = [];
-    let total = 0;
-    let offset = 0;
-    const limit = 100;
-
-    const firstResponse = await api.get<Response>(
-      `${url}/v0/users/1254033/collections?subject_type=2&type=2&limit=1&offset=0`
-    );
-
-    if (firstResponse.status !== 200) {
-      console.error(firstResponse.data.title);
-      console.error(firstResponse.data.description);
-      return;
-    }
-
-    total = firstResponse.data.total;
-    careerStats.watched = total;
-
-    const totalPages = Math.ceil(total / limit);
-
-    for (let page = 0; page < totalPages; page++) {
-      offset = page * limit;
-      const response = await api.get<Response>(
-        `${url}/v0/users/1254033/collections?subject_type=2&type=2&limit=${limit}&offset=${offset}`
-      );
-
-      if (response.status === 200) {
-        allData = allData.concat(response.data.data);
-      } else {
-        console.error(`第${page + 1}页请求失败:`, response.data.title);
-        break;
-      }
-    }
-    allData.sort((a, b) => b.rate - a.rate);
-    favoriteAnime.value = allData.slice(0, 20);
+    const { data } = await api.get<AnimeCollectionsResponse>(`/api/bangumi/anime/${category}`)
+    careerStats.value[stat] = data.total
+    if (list) list.value = data.data
   } catch (error) {
-    console.error("网络错误:", error);
-  }
-}
-
-const getWatchingAnime = async () => {
-  try {
-    const response = await api.get<Response>(`${url}/v0/users/1254033/collections?subject_type=2&type=3&limit=10&offset=0`);
-    if (response.status === 200) {
-      watchingAnime.value = response.data.data
-      careerStats.watching = response.data.total
-    } else {
-      console.error(response.data.title);
-      console.error(response.data.description);
-      console.error(response.data.details);
-    }
-  } catch (error) {
-    console.error("网络错误")
-  }
-}
-
-const getWantAnime = async () => {
-  try {
-    const response = await api.get<Response>(`${url}/v0/users/1254033/collections?subject_type=2&type=1&limit=10&offset=0`);
-    if (response.status === 200) {
-      wantAnime.value = response.data.data
-      careerStats.want = response.data.total
-    } else {
-      console.error(response.data.title);
-      console.error(response.data.description);
-      console.error(response.data.details);
-    }
-  } catch (error) {
-    console.error("网络错误")
-  }
-}
-
-const getPostponeAnime = async () => {
-  try {
-    const response = await api.get<Response>(`${url}/v0/users/1254033/collections?subject_type=2&type=4&limit=10&offset=0`);
-    if (response.status === 200) {
-      postponeAnime.value = response.data.data
-      careerStats.postpone = response.data.total
-    } else {
-      console.error(response.data.title);
-      console.error(response.data.description);
-      console.error(response.data.details);
-    }
-  } catch (error) {
-    console.error("网络错误")
-  }
-}
-
-const getAbandonedAnime = async () => {
-  try {
-    const response = await api.get<Response>(`${url}/v0/users/1254033/collections?subject_type=2&type=5&limit=10&offset=0`);
-    if (response.status === 200) {
-      abandonedAnime.value = response.data.data
-      careerStats.abandoned = response.data.total
-    } else {
-      console.error(response.data.title);
-      console.error(response.data.description);
-      console.error(response.data.details);
-    }
-  } catch (error) {
-    console.error("网络错误")
+    console.error(`Bangumi ${category} 加载失败:`, error)
   }
 }
 
@@ -712,10 +611,17 @@ onMounted(async () => {
       setTimeout(() => r.value?.classList.add('in'), delays[i])
     })
   })
-  getPostponeAnime();
-  getAbandonedAnime();
-  await Promise.all([getFavoriteAnime(), getWatchingAnime(), getWantAnime()])
-  animeLoading.value = false
+  try {
+    await Promise.all([
+      getAnimeCollection('favorites', 'watched', favoriteAnime),
+      getAnimeCollection('watching', 'watching', watchingAnime),
+      getAnimeCollection('want', 'want', wantAnime),
+      getAnimeCollection('postpone', 'postpone'),
+      getAnimeCollection('abandoned', 'abandoned'),
+    ])
+  } finally {
+    animeLoading.value = false
+  }
 })
 
 const unmount = () => {

@@ -3,6 +3,7 @@ import cors from 'cors'
 import { config } from './config'
 import coreRoutes from './routes/core'
 import steamRoutes from './routes/steam'
+import bangumiRoutes from './routes/bangumi'
 
 const app = express()
 
@@ -16,6 +17,7 @@ app.use((req: Request, _res: Response, next: NextFunction) => {
 
 app.use('/api', coreRoutes)
 app.use('/api/steam', steamRoutes)
+app.use('/api/bangumi', bangumiRoutes)
 
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   console.error('[unhandled error]', err.message, err.stack)
@@ -25,4 +27,5 @@ app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
 app.listen(config.port, () => {
   console.log(`Server running on http://localhost:${config.port}`)
   console.log(`Steam API endpoints at http://localhost:${config.port}/api/steam/*`)
+  console.log(`Bangumi API endpoints at http://localhost:${config.port}/api/bangumi/*`)
 })

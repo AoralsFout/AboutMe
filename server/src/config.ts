@@ -8,5 +8,7 @@ export const config = {
   steamApiKey: process.env.STEAM_API_KEY || '',
   steamId: process.env.STEAM_ID || '',
   familyGroupId: process.env.FAMILY_GROUP_ID || '',
+  bangumiApiBaseUrl: process.env.BANGUMI_API_BASE_URL || 'https://api.bgm.tv',
+  bangumiUsername: process.env.BANGUMI_USERNAME || '1254033',
   fastfetchPath: path.join(__dirname, '..', 'fastfetch.txt'),
 }
